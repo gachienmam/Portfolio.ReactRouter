@@ -10,7 +10,6 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const Contact = lazy(() => import("./pages/Contact"));
 
 const router = createBrowserRouter([
   {
@@ -21,7 +20,6 @@ const router = createBrowserRouter([
       { path: "about", element: <Suspense fallback={<Loading />}><About /></Suspense> },
       { path: "projects", element: <Suspense fallback={<Loading />}><Projects /></Suspense> },
       { path: "projects/:slug", element: <Suspense fallback={<Loading />}><ProjectDetail /></Suspense> },
-      { path: "contact", element: <Suspense fallback={<Loading />}><Contact /></Suspense> },
     ],
   },
 ]);
