@@ -22,7 +22,7 @@ export default function ProjectDetail() {
           transition={{ duration: 0.5 }}
         >
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center text-xl ml-[25%] mr-[25%]">
-            <Link to={projectsList[index].link}><img src={projectsList[index].image} alt="Click here to go to this project's page"/></Link>
+            <Link to={projectsList[index].link}><img src={import.meta.env.BASE_URL + projectsList[index].image} alt="Click here to go to this project's page"/></Link>
           </div>
         </motion.div>
       </AnimatePresence>

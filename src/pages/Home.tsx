@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <HomeScroll projectNames={projectsList.map((project) => project.title)} 
                   components={projectsList.map((project) => <Link className="text-blue-500" to={`/projects/${project.slug}`}>
-                    <img className="max-h-[25em]" src={project.image}/>
+                    <img className="max-h-[25em]" src={import.meta.env.BASE_URL + project.image}/>
                   </Link>)} 
       />
       <footer className="absolute bottom-0 z-50 w-full">
