@@ -28,18 +28,18 @@ export default function HomeScroll({ projectNames, components }: HomeScrollProps
       <AnimatePresence mode="wait">
         <motion.div
           key={`bgComponent-${index}`}
-          className="absolute inset-0 z-0 overflow-hidden h-1em leading-[1em] flex items-center"
-          initial={{ y: "100em" }}
+          className="absolute inset-0 z-0 overflow-hidden leading-[1em] flex items-center"
+          initial={{ y: "50em" }}
           animate={{ y: 0 }}
-          transition={{ duration: 1, ease: "easeIn" }}
-          exit={{ y: "-100em" }}
+          transition={{ duration: 0.8, ease: "easeIn" }}
+          exit={{ y: "-50em" }}
         >
           <motion.div
             className="whitespace-nowrap text-6xl font-bold opacity-10 px-4"
-            animate={{ x: ["-50%", "50%"] }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            animate={{ x: ["-70%", "100%"] }}
+            transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
           >
-            {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]}
+            {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp; {projectNames[index]} &nbsp;
           </motion.div>
         </motion.div>
       </AnimatePresence>
@@ -54,11 +54,14 @@ export default function HomeScroll({ projectNames, components }: HomeScrollProps
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center text-xl">
-            {components[index]}
+          <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center text-xl ml-[25%] mr-[25%]">
+            {components[index] }
           </div>
-          <div className="absolute top-1/2 text-center text-xl p-16">
+          <div className="absolute top-1/8 text-center text-xl p-16">
             {projectNames[index]}
+          </div>
+          <div className="absolute bottom-1/8 text-center font-mono text-xl p-16">
+            {index + 1}/{projectNames.length}
           </div>
         </motion.div>
       </AnimatePresence>
