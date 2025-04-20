@@ -19,10 +19,23 @@ export default function HomeScroll({ projectNames, components }: HomeScrollProps
     }
   };
 
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { y: number } }) => {
+    if (info.offset.y < -50) {
+      // dragged up -> next
+      setIndex((prev) => (prev + 1) % projectNames.length);
+    } else if (info.offset.y > 50) {
+      // dragged down -> previous
+      setIndex((prev) => (prev - 1 + projectNames.length) % projectNames.length);
+    }
+  };
+
   return (
-    <div
+    <motion.div
       className="relative w-screen h-screen overflow-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
       onWheel={handleScroll}
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      onDragEnd={handleDragEnd}
     >
       {/* Background scrolling text */}
       <AnimatePresence mode="wait">
@@ -65,6 +78,6 @@ export default function HomeScroll({ projectNames, components }: HomeScrollProps
           </div>
         </motion.div>
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
