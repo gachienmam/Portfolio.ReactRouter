@@ -29,7 +29,7 @@ const router = createBrowserRouter(
     ]
   }],
   // Deploying to GitHub Pages 
-  { basename: import.meta.env.DEV ? '/' : '/portfolio.reactrouter/'}
+  { basename: import.meta.env.DEV ? '/' : '/Portfolio.ReactRouter/'}
 );
 
 export default function App() {
