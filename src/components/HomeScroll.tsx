@@ -19,7 +19,7 @@ export default function HomeScroll({ projectNames, components }: HomeScrollProps
     }
   };
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { y: number } }) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { y: number } }) => {
     if (info.offset.y < -50) {
       // dragged up -> next
       setIndex((prev) => (prev + 1) % projectNames.length);
