@@ -21,7 +21,7 @@ concurrency:
     cancel-in-progress: true
 
 env:
-    NODE_VERSION: 22.14.1
+    NODE_VERSION: 22.14.0
     GENERIC_LIBRARY: frontend/generic-library
     BASE_URL: ${{ secrets.BASE_URL }}
 
